@@ -6,11 +6,13 @@ function multiply () {
   let num2 = document.getElementById('num-2').value
 
   // stores nagative or positive value
-  isNegative = false
+  let isNegative = false
 
   // checking to see if numbers should end up as negative or not
   // creating an xor logic gate so that negative is true when numbers have opposite signs
-  if (num1 >= 0 && num2 < 0 || num1 < 0 && num2 >= 0) {
+  const negativePositive = num1 < 0 && num2 >= 0
+  const positiveNegative = num1 >= 0 && num2 < 0
+  if (negativePositive || positiveNegative) {
     isNegative = true
   }
 
@@ -27,8 +29,8 @@ function multiply () {
     document.getElementById('answer').innerText = `ValueError: ${num1} is not a number`
     return 0
   } else if (isNaN(num2)) {
-      document.getElementById('answer').innerText = `ValueError: ${num2} is not a number`
-      return 0
+    document.getElementById('answer').innerText = `ValueError: ${num2} is not a number`
+    return 0
   }
 
   // values are parsed into ints to allow calculation
@@ -36,7 +38,7 @@ function multiply () {
   num2 = parseInt(num2)
 
   // adding number 2 as many times as number 1's value
-  for (i = 0; i < num1; i++) {
+  for (let i = 0; i < num1; i++) {
     answer += num2
   }
 
@@ -46,7 +48,7 @@ function multiply () {
   if (isNegative) {
     answer = answer - answer - answer
   }
-  
+
   // displaying answer
   document.getElementById('answer').innerText = answer
 }
