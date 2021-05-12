@@ -1,0 +1,33 @@
+body {
+  background-color: lightgrey;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkblue;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+textarea {
+  width: 50px;
+}
+
+input {
+  width: 50px;
+  margin: 5px;
+  background-color: white;
+  border: 1px solid darkblue;
+}
+
+button {
+  border: 1px solid darkblue;
+  background-color: lightskyblue;
+  color: darkblue;
+}
+
+span {
+  color: darkblue;
+}
